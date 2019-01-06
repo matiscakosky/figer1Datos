@@ -15,12 +15,13 @@ def main():
 def subir():
     git(["add", "--no-ignore-removal", "."])
     s=git(["commit", "-m", "commit desde pythoN"])
+    print(s.output)
     s=git(["push", "--force-with-lease", "origin", "master"])
     print(s.output)
     
 def git(args):
     print("gola")
-    subprocess.run(["git"] + args, cwd=a)
+    subprocess.run(["git"] + args, cwd=a,stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     return
 
 main()
