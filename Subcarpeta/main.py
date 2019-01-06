@@ -20,7 +20,7 @@ def subir():
     
 def git(args):
     print("Holaaaa")
-    subprocess.run(["git"] + args, cwd=a,stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    subprocess.run(["git"] + args, cwd=a,stdin=subprocess.PIPE,stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     return
 
 main()
