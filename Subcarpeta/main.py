@@ -6,21 +6,28 @@ Created on Sat Jan  5 21:02:18 2019
 """
 import subprocess
 import pathlib
+from git import Git
+import os
 a=pathlib.Path(r"/mnt/c/users/usuario/desktop/fiuba/Organizacion de datos/La otra/finger 4/Subcarpeta")
 
 
 def main():
+    project_dir = os.path.dirname(os.path.abspath(__file__))
+    os.environ['GIT_ASKPASS'] = os.path.join(project_dir, 'askpass.py')
+    os.environ['GIT_USERNAME'] = "matiscakosky"
+    os.environ['GIT_PASSWORD'] = "mati38707339"
+    g = Git("/mnt/c/users/usuario/desktop/fiuba/Organizacion de datos/La otra/finger 4")
     subir()
+    g.push("origin","master")
     
 def subir():
     git(["add", "--no-ignore-removal", "."])
     s=git(["commit", "-m", "commit desde pythoN2"])
-    s=git(["push", "--force-with-lease", "origin", "master"])
-    print("termino")
+    print("comiteo")
     
 def git(args):
-    print("Holaaaa")
-    subprocess.run(["git"] + args, cwd=a,stdin=subprocess.PIPE,stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    print("Holaaaaaa")
+    subprocess.run(["git"] + args, cwd=a)
     return
 
 main()
