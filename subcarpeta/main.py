@@ -15,7 +15,6 @@ def main():
 def subir():
     git(["add", "--no-ignore-removal", "."])
     s=git(["commit", "-m", "commit desde pythoN"])
-    print(s.output)
     s=git(["push", "--force-with-lease", "origin", "master"])
     print(s.output)
     
