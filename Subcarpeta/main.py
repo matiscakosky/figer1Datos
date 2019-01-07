@@ -16,7 +16,7 @@ def main():
     os.environ['GIT_ASKPASS'] = os.path.join(project_dir, 'askpass.py')
     os.environ['GIT_USERNAME'] = "matiscakosky"
     os.environ['GIT_PASSWORD'] = "mati38707339"
-    g = Git("/mnt/c/users/usuario/desktop/fiuba/Organizacion de datos/La otra/finger 4")
+    g = Git("/mnt/c/users/usuario/desktop/fiuba/Organizacion de datos/La otra/finger 4") #path to local repo
     subir()
     g.push("origin","master")
     
