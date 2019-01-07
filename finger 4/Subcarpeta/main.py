@@ -26,7 +26,7 @@ def subir():
     print("comiteo")
     
 def git(args):
-    print("Holaaaaaa")
+    print("Holaaaaaaa")
     subprocess.run(["git"] + args, cwd=a)
     return
 
